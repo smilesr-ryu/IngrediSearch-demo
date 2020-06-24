@@ -42,6 +42,12 @@ public class ViewHelper {
         mNoResultsContainer.setVisibility(View.GONE);
     }
 
+    public void showNoResults() {
+        mLoadingContainer.setVisibility(View.GONE);
+        mErrorContainer.setVisibility(View.GONE);
+        mNoResultsContainer.setVisibility(View.VISIBLE);
+    }
+
     public static void hideKeyboard(Fragment context) {
         View view = context.requireActivity().getCurrentFocus();
         if (view != null) {
