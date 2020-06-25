@@ -13,18 +13,15 @@ class RecipeDetailsViewModel extends AndroidViewModel {
 
     private static final String TAG = "RecipeApp";
 
-//    private RecipeRepository mRepository;
-
     public RecipeDetailsViewModel(@NonNull Application application) {
         super(application);
-//        this.mRepository = RecipeRepository.getInstance(application);
     }
     public LiveData<Resource<Recipe>> getRecipe() {
-//        return mRepository.getRecipe();
+        // TODO
         return null;
     }
 
     public void searchRecipe(String recipeId) {
-//        mRepository.searchRecipe(recipeId);
+        // TODO
     }
 }

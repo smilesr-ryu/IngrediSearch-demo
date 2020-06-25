@@ -19,7 +19,7 @@ public class RecipeDetailsViewModelFactory implements ViewModelProvider.Factory 
     @SuppressWarnings("unchecked")
     public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
         if (!modelClass.isAssignableFrom(RecipeDetailsViewModel.class))
-            throw new IllegalArgumentException("Invalid view factory");
+            throw new IllegalArgumentException("No such viewmodel exists");
         return (T) new RecipeDetailsViewModel(app);
     }
 }

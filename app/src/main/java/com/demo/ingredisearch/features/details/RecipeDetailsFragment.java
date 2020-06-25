@@ -28,18 +28,8 @@ public class RecipeDetailsFragment extends Fragment {
 
     private static final String TAG = "RecipeApp";
 
-    private AppCompatImageView mRecipeImage;
-    private TextView mRecipeTitle, mRecipeRank;
-    private LinearLayout mRecipeIngredientsContainer;
-
     private ScrollView mScrollView;
-
-    private LinearLayout mLoadingContainer;
-    private LinearLayout mErrorContainer;
-    private LinearLayout mNoResultsContainer;
-
     private ViewHelper mViewHelper;
-
     private RecipeDetailsViewModel mViewModel;
 
     @Nullable
@@ -59,9 +49,9 @@ public class RecipeDetailsFragment extends Fragment {
         mRecipeRank = root.findViewById(R.id.recipe_social_score);
         mRecipeIngredientsContainer = root.findViewById(R.id.ingredients_container);
 
-        mLoadingContainer = root.findViewById(R.id.loadingContainer);
-        mNoResultsContainer = root.findViewById(R.id.noresultsContainer);
-        mErrorContainer = root.findViewById(R.id.errorContainer);
+        LinearLayout mLoadingContainer = root.findViewById(R.id.loadingContainer);
+        LinearLayout mNoResultsContainer = root.findViewById(R.id.noresultsContainer);
+        LinearLayout mErrorContainer = root.findViewById(R.id.errorContainer);
 
         mViewHelper = new ViewHelper(mLoadingContainer, mErrorContainer, mNoResultsContainer);
 
@@ -108,10 +98,15 @@ public class RecipeDetailsFragment extends Fragment {
                     showRecipe(response.data);
                     mScrollView.setVisibility(View.VISIBLE);
                 } else {
-                    mNoResultsContainer.setVisibility(View.VISIBLE);
+                    mScrollView.setVisibility(View.GONE);
+                    mViewHelper.showNoResults();
                 }
         }
     }
+
+    private AppCompatImageView mRecipeImage;
+    private TextView mRecipeTitle, mRecipeRank;
+    private LinearLayout mRecipeIngredientsContainer;
 
     private void showRecipe(Recipe recipe) {
         RequestOptions requestOptions = new RequestOptions()
