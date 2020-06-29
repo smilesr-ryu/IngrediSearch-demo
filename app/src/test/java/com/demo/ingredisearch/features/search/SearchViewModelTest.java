@@ -2,7 +2,7 @@ package com.demo.ingredisearch.features.search;
 
 import org.junit.Test;
 
-class SearchViewModelTest {
+public class SearchViewModelTest {
 
     @Test
     public void search_validQuery_triggerNavToSearchResults() {
