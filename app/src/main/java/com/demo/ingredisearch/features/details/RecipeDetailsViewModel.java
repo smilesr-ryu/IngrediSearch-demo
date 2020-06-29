@@ -9,7 +9,7 @@ import androidx.lifecycle.LiveData;
 import com.demo.ingredisearch.models.Recipe;
 import com.demo.ingredisearch.util.Resource;
 
-class RecipeDetailsViewModel extends AndroidViewModel {
+public class RecipeDetailsViewModel extends AndroidViewModel {
 
     private static final String TAG = "RecipeApp";
 
